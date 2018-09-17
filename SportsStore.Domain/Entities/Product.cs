@@ -2,6 +2,7 @@
 
 namespace SportsStore.Domain.Entities
 {
+    //实体类
     public class Product
     {
         public int ProductId { get; set; }

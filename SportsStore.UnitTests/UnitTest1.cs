@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SportsStore.UnitTests
 {
@@ -9,6 +8,7 @@ namespace SportsStore.UnitTests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
