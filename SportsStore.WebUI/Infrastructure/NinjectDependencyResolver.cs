@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Moq;
 using Ninject;
 using SportsStore.Domain.Abstract;
-using SportsStore.Domain.Entities;
-using System.Linq;
 using SportsStore.Domain.Concrete;
 
 namespace SportsStore.WebUI.Infrastructure
 {
     public class NinjectDependencyResolver : IDependencyResolver
     {
+        //声明接口当作字段
         private IKernel kernel;
 
+        //构造方法(将接口当作参数)
         public NinjectDependencyResolver(IKernel kernelParam)
         {
             kernel = kernelParam;
             AddBindings();
         }
+
+        #region 两个GetService和GetServices的方法
 
         public object GetService(Type serviceType)
         {
@@ -30,9 +31,9 @@ namespace SportsStore.WebUI.Infrastructure
             return kernel.GetAll(serviceType);
         }
 
-        /// <summary>
-        /// 添加绑定
-        /// </summary>
+        #endregion
+
+        //添加绑定
         private void AddBindings()
         {
             #region 1.写死的Moq测试
